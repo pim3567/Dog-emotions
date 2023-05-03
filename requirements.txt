@@ -1,1 +1,1 @@
-fastai==1.0.58
+fastai
