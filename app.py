@@ -5,15 +5,9 @@ from fastai.vision.all import (
 import urllib.request
 import streamlit as st
 
-import pathlib
-temp = pathlib.PosixPath
-pathlib.PosixPath = pathlib.WindowsPath
-
 MODEL_URL = "https://huggingface.co/spaces/pimThrada/Dog-emotion/resolve/main/dogemotionmodel.pkl"
 urllib.request.urlretrieve(MODEL_URL, "dogemotionmodel.pkl")
 learn_inf = load_learner('dogemotionmodel.pkl', cpu=True)
-
-pathlib.PosixPath = temp
     
 def get_image_from_upload():
     uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
