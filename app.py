@@ -6,6 +6,7 @@ import urllib.request
 import streamlit as st
 
 import pathlib
+import platform
 plt = platform.system()
 if plt == 'Windows': pathlib.PosixPath = pathlib.WindowsPath
 
