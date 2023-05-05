@@ -5,9 +5,9 @@ from fastai.vision.all import (
 import urllib.request
 import streamlit as st
     
-MODEL_URL = "https://huggingface.co/spaces/pimThrada/Dog-emotion/resolve/main/dogemotionmodel.pkl"
-urllib.request.urlretrieve(MODEL_URL, "dogemotionmodel.pkl")
-learn_inf = load_learner('dogemotionmodel.pkl')
+MODEL_URL = "https://huggingface.co/spaces/pimThrada/Dog-emotion/resolve/main/dogemotion-model-final.pkl"
+urllib.request.urlretrieve(MODEL_URL, "dogemotion-model-final.pkl")
+learn_inf = load_learner('dogemotion-model-final.pkl')
     
 def get_image_from_upload():
     uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
