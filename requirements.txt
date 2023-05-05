@@ -1,1 +1,6 @@
-fastai
+fastbook
+progressbar2
+tqdm
+streamlit
+Shapely
+streamlit
