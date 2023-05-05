@@ -8,7 +8,8 @@ import streamlit as st
 import platform
 import pathlib
 plt = platform.system()
-if plt != 'Windows': pathlib.WindowsPath = pathlib.PosixPath
+if plt == 'Windows': pathlib.WindowsPath = pathlib.PosixPath
+else : pathlib.PosixPath = pathlib.WindowsPath
     
 MODEL_URL = "https://huggingface.co/spaces/pimThrada/Dog-emotion/resolve/main/dogemotionmodel.pkl"
 urllib.request.urlretrieve(MODEL_URL, "dogemotionmodel.pkl")
