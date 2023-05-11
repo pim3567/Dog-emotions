@@ -19,7 +19,7 @@ def get_image_from_upload():
     
 def predict(learn, img):
     pred, pred_idx, pred_prob = learn.predict(img)
-    st.success(f"This is {pred} dog with the probability of {pred_prob[pred_idx]*100:.02f}%")
+    st.success(f"{pred} {pred_prob[pred_idx]*100:.02f}%")
     #st.image(img, use_column_width=True)
     
 
