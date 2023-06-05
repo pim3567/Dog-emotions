@@ -6,7 +6,7 @@ import glob
 from datetime import datetime
 import os
 import wget
-#from video_predict import runVideo
+from video_predict import runVideo
 
 
 # Configurations
@@ -85,7 +85,7 @@ def imageInput(model, src):
                     'data/outputs', os.path.basename(image_file)))
                 st.image(img_, caption='Model Prediction(s)')
 
-"""
+
 def videoInput(model, src):
     if src == 'Upload your own data.':
         uploaded_video = st.file_uploader(
@@ -124,7 +124,7 @@ def videoInput(model, src):
         submit = st.button("Predict!")
         if submit:
             runVideo(model, video, pred_view, warning)
-"""
+
 
 def main():
     if CFG_ENABLE_URL_DOWNLOAD:
@@ -158,8 +158,8 @@ def main():
 
     if option == "Image":
         imageInput(loadmodel(deviceoption), datasrc)
-    #elif option == "Video":
-    #    videoInput(loadmodel(deviceoption), datasrc)
+    elif option == "Video":
+        videoInput(loadmodel(deviceoption), datasrc)
 
 
 # Downlaod Model from url.
