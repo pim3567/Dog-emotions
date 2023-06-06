@@ -41,7 +41,10 @@ with tab2:
 
     def predict(learn, img):
         pred, pred_idx, pred_prob = learn.predict(img)
-        st.success(f"{pred} {pred_prob[pred_idx]*100:.02f}%")
+        if pred=='unknow':
+            st.success(f"This is {pred} with the probability of {pred_prob[pred_idx]*100:.02f}%")
+        else:
+            st.success(f"This is {pred} dog with the probability of {pred_prob[pred_idx]*100:.02f}%")
 
     image = take_a_picture()
     result = st.button('Classify',key=1)
