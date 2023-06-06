@@ -29,7 +29,7 @@ def get_image_from_upload():
 def take_a_picture():
     picture = st.camera_input("Take a picture")
     if picture:
-        st.image(picture)
+        #st.image(picture)
         return PILImage.create((picture)) 
     return None
         
