@@ -23,7 +23,10 @@ with tab1:
         
     def predict(learn, img):
         pred, pred_idx, pred_prob = learn.predict(img)
-        st.success(f"{pred} {pred_prob[pred_idx]*100:.02f}%")
+        if pred=='unknown':
+            st.success(f"This is {pred} with the probability of {pred_prob[pred_idx]*100:.02f}%")
+        else:
+            st.success(f"This is {pred} dog with the probability of {pred_prob[pred_idx]*100:.02f}%")
 
     image = get_image_from_upload()
     result1 = st.button('Classify',key=0)
@@ -41,7 +44,7 @@ with tab2:
 
     def predict(learn, img):
         pred, pred_idx, pred_prob = learn.predict(img)
-        if pred=='unknow':
+        if pred=='unknown':
             st.success(f"This is {pred} with the probability of {pred_prob[pred_idx]*100:.02f}%")
         else:
             st.success(f"This is {pred} dog with the probability of {pred_prob[pred_idx]*100:.02f}%")
