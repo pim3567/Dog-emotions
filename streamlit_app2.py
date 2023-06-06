@@ -53,6 +53,31 @@ with tab2:
     result = st.button('Classify',key=1)
     if result:
         predict(learn_inf, image)
+        
+        
+with tab3:
+    def get_image_from_test_set():
+        imgpath = glob.glob('data/images/*')
+        imgsel = st.slider('Select random images from test set.', min_value=1, max_value=len(imgpath), step=1) 
+        image_file = imgpath[imgsel-1]
+        if image_file is not None:
+            st.image(PILImage.create((image_file)))
+            return PILImage.create((image_file))
+        return None
+        
+    def predict(learn, img):
+        pred, pred_idx, pred_prob = learn.predict(img)
+        if pred=='unknown':
+            st.success(f"This is {pred} with the probability of {pred_prob[pred_idx]*100:.02f}%")
+        else:
+            st.success(f"This is {pred} dog with the probability of {pred_prob[pred_idx]*100:.02f}%")
+
+    image = get_image_from_test_set()
+    result1 = st.button('Classify',key=2)
+    if result1:
+        predict(learn_inf, image)
+        
+        
 
 
 
