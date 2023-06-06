@@ -11,7 +11,7 @@ learn_inf = load_learner('dogemotion-model-5-final.pkl')
 
 st.title('Dog emotion classification model')
 
-tab1, tab2 = st.tabs(["uploaded file", "Take a picture"])
+tab1, tab2, tab3 = st.tabs(["uploaded file", "Take a picture", "use image from test set"])
 
 with tab1:
     def get_image_from_upload():
