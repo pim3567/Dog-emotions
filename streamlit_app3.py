@@ -50,9 +50,9 @@ def main():
         image = get_image_from_upload()
     else:
         image = take_a_picture()
-    #result1 = st.button('Classify',key=1)
-    #if result1:
-    predict(learn_inf, image)        
+    result = st.button('Classify')
+    if result:
+        predict(learn_inf, image)        
     
 if __name__ == '__main__':
     main()
