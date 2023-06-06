@@ -35,28 +35,8 @@ with tab1:
     result1 = st.button('Classify',key=0)
     if result1:
         predict(learn_inf, image)
-        
+  
 with tab2:
-    def take_a_picture():
-        picture = st.camera_input("Take a picture")
-        if picture:
-            st.image(picture)
-            return PILImage.create((picture)) 
-        return None
-
-    def predict(learn, img):
-        pred, pred_idx, pred_prob = learn.predict(img)
-        if pred=='unknown':
-            st.success(f"This is {pred} with the probability of {pred_prob[pred_idx]*100:.02f}%")
-        else:
-            st.success(f"This is {pred} dog with the probability of {pred_prob[pred_idx]*100:.02f}%")
-
-    image = take_a_picture()
-    result = st.button('Classify',key=1)
-    if result:
-        predict(learn_inf, image)
-        
-with tab3:
     def get_image_from_upload():
         uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg', 'jpg'])
         if uploaded_file is not None:
@@ -72,9 +52,31 @@ with tab3:
             st.success(f"This is {pred} dog with the probability of {pred_prob[pred_idx]*100:.02f}%")
 
     image = get_image_from_upload()
-    result1 = st.button('Classify',key=2)
+    result1 = st.button('Classify',key=1)
     if result1:
         predict(learn_inf, image)
+        
+with tab3:
+    def take_a_picture():
+        picture = st.camera_input("Take a picture")
+        if picture:
+            st.image(picture)
+            return PILImage.create((picture)) 
+        return None
+
+    def predict(learn, img):
+        pred, pred_idx, pred_prob = learn.predict(img)
+        if pred=='unknown':
+            st.success(f"This is {pred} with the probability of {pred_prob[pred_idx]*100:.02f}%")
+        else:
+            st.success(f"This is {pred} dog with the probability of {pred_prob[pred_idx]*100:.02f}%")
+
+    image = take_a_picture()
+    result = st.button('Classify',key=2)
+    if result:
+        predict(learn_inf, image)
+        
+
     
 
 
