@@ -2,6 +2,7 @@
 
 Machine Learning ประเภท image classification ทำนายว่าสุนัขในภาพกำลังรู้สึกอย่างไร
 อ่านรายละเอียดเพิ่มเติมได้ที่ 
+https://medium.com/@thirada.pim567/dog-emotions-67000abcce08
 
 # Dataset
 
