@@ -14,4 +14,5 @@ https://www.kaggle.com/datasets/danielshanbalico/dog-vs-not-dog?resource=downloa
 โฟลเดอร์ [data/dogemotion-data-final-5categories](https://github.com/pim3567/Dogemotion/tree/main/data/dogemotion-data-final-5categories)
 
 # Web app
-[ทดลองใช้](https://pim3567-dogemotion-app-cb5m7r.streamlit.app/)
+ทดลองใช้ได้ที่
+https://pim3567-dogemotion-app-cb5m7r.streamlit.app/
